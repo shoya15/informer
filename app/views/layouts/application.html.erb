@@ -18,27 +18,15 @@
 
   <body> <!--ユーザーから見える-->
     <header class="header">
-        <h1 class="logo">
-            <li><%= link_to "Informar", root_path %></li>
+        <h1 class="header-logo">
+            <%= link_to "Informer" ,root_path, class: "header-link" %>
         </h1>
-        <nav>
-            <ul class="nav-list">
-                <li><%= link_to "ABOUT", about_path %></li>
-                <li><%= link_to "CONTACT", contact_path %></li>
+        <nav class="header-nav">
+            <ul class="header-navlist">
+                <li class="header-navitem"><%= link_to "ABOUT", about_path, class: "header-navlink" %></li>
+                <li class="header-navitem"><%= link_to "CONTACT", contact_path, class: "header-navlink" %></li>
             </ul>
         </nav>
-        <%# 
-        <nav class="header-nav">
-            <ul class="hetader-navlist">
-                <li class="header-navitem">
-                  <a href="#">ABOUT</a>
-                </li>
-                                <li class="header-navitem">
-                  <a href="#">CONTACT</a>
-            </ul>
-        </nav> 
-        と同じ
-        %>
     </header>
     <%= yield %>
 
