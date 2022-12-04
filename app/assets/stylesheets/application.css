@@ -5,3 +5,54 @@ body {
     /* 代替え案 */
     font-family: 'Noto Sans JP', "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
 }
+
+.header {
+    width: auto;
+    /* 横一列にする */
+    display: flex;
+    /* menuは右にロゴは左に */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    /* 位置固定 */
+    position: fixed;
+    /* 最前面に */
+    z-index: 10;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+}
+
+.header-logo {
+    margin: 0;
+}
+
+.header-link {
+    /* aタグを一応blockにしておく */
+    display: block;
+    color: #333;
+    /* 下線がつかないようにする */
+    text-decoration: none;
+}
+
+.header-navlist {
+    margin: 0;
+    display: flex;
+}
+
+.header-navlink {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    /* 透明な線を入れておく->アニメーションっぽくなる */
+    border-bottom: 2px solid transparent;
+    transition: border-color .25s;
+}
+
+.header-navlink:hover {
+    /* solid: 一本線 */
+    border-bottom: 2px solid #333;
+}
