@@ -1,16 +1,47 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!--ファイルがhtml文書であることを示す目印-->
 <html>
   <head>
+    <meta charset="uft-8"> <!--文字コードの指定-->
+    <meta name="viewport" content="width=device-width,initial-scale=1"> <!--それぞれのデバイスの大きさに合わせて表示-->
     <title><%= full_title(yield(:title)) %></title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="sample text" >  <!--検索した後に表示されている文章（初期設定ではないから追加する）-->
+    
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag "sanitize.css" %> <!-- <link href="/assets/sanitize.css" rel="stylesheet" /> -->
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body> <!--ユーザーから見える-->
+    <header class="header">
+        <h1 class="logo">
+            <li><%= link_to "Informar", root_path %></li>
+        </h1>
+        <nav>
+            <ul class="nav-list">
+                <li><%= link_to "ABOUT", about_path %></li>
+                <li><%= link_to "CONTACT", contact_path %></li>
+            </ul>
+        </nav>
+        <%# 
+        <nav class="header-nav">
+            <ul class="hetader-navlist">
+                <li class="header-navitem">
+                  <a href="#">ABOUT</a>
+                </li>
+                                <li class="header-navitem">
+                  <a href="#">CONTACT</a>
+            </ul>
+        </nav> 
+        と同じ
+        %>
+    </header>
     <%= yield %>
+
+    <%= javascript_importmap_tags %> <!-- 見た目に影響しないためheadタグでなくbodyタグの終わりに書く（headタグが読み込み終わるまで画面は真っ白） -->
   </body>
 </html>
