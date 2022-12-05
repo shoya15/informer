@@ -1,7 +1,30 @@
 <% provide(:title, "Home") %>
-<h1>Informer</h1>
 <p>
-    This is the home page of the
-    <a href="http://localhost:3000/">Informer</a>
-    .
+    読み上げるテキストと時間を設定してください。
 </p>
+<form class="form" action="">
+    <table class="form-table">
+        <%# table raw: 行を作る %>
+        <tr> 
+            <%# tabla headline: 見出し %>
+            <th>
+                <%# 見出しを押しても、項目にフォーカスできるようにする %>
+                <label for="name">
+                テキスト
+                </label>
+            </th>
+            <%# table data: 項目 %>
+            <td>
+                <input type="text" id="name">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                時間
+            </th>
+            <td>
+            </td>
+        </tr>
+    </table>
+    <button class="button" type="button">設定</button>
+</form>

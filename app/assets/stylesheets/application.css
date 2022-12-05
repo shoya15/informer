@@ -4,6 +4,7 @@
 body {
     /* 代替え案 */
     font-family: 'Noto Sans JP', "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+    margin-top: 50px;
 }
 
 .header {
