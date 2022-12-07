@@ -1,7 +1,16 @@
 <% provide(:title, "Contact") %>
 <h1>Contact</h1>
 <p>
-    This is the contact page of the
-    <a href="http://localhost:3000/">Informer</a>
-    .
+    改善して欲しい点や要望をご記入ください。
 </p>
+<form class="form" action="">
+    <table class="form-table">
+        <tr> 
+            <td>
+                <%# 大きいテキストボックス(cols:行, rows:文字数) %>
+                <textarea class="textarea" cols="30" rows="10"></textarea>
+            </td>
+        </tr>
+    </table>
+    <button class="submit" type="submit">送信</button>
+</form>
