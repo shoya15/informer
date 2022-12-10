@@ -63,8 +63,7 @@ body {
 label,
 input,
 textarea,
-button,
-submit {
+button {
     /* カーソルが指マークになる */
     cursor: pointer;
 }
@@ -84,4 +83,45 @@ submit {
     padding: 10px;
     border: 1px solid #ccc;
     min-width: 500px;
+}
+
+.button {
+    display: inline-block;
+    /* 
+    インライン要素でありながらブロック要素のような振る舞いもすることができる
+    横並びにしたり、上下左右にpadding, marginを持つことができる
+    */
+    color: #000;
+    font-weight: bold;
+    background-color: transparent;
+    transition: background-color .25s;
+    border: 2px solid #000;
+    text-align: center;
+    padding: 15px 50px;
+    border-radius: 5px;
+}
+
+.button:hover {
+    color: #fff;
+    background-color: #000;
+}
+
+.form-table {
+    /* ブロック要素にたいして以下のようにすると、上下は0で中央寄せになる */
+    margin: 0 auto;
+}
+
+.form-table th {
+    padding: 10px;
+    /* 左寄せ */
+    text-align: left;
+}
+
+.form-table td {
+    padding: 10px;
+}
+
+.form-button {
+    margin: 20px;
+    text-align: center;
 }
