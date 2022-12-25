@@ -60,12 +60,24 @@ body {
     border-bottom: 2px solid #333;
 }
 
+.script {
+    margin: 150px 0px 0px 350px;
+    padding-left: 120px;
+    font-size: 22px;
+}
+
 label,
 input,
 textarea,
+select,
 button {
     /* カーソルが指マークになる */
     cursor: pointer;
+}
+
+.label {
+    padding: 10px;
+    font-size: 18px;
 }
 
 .input {
@@ -76,6 +88,8 @@ button {
     /* 枠線の設定 */
     border: 1px solid #ccc;
     min-width: 500px;
+    min-height: 50px;
+    font-size: 20px;
 }
 
 .textarea {
@@ -83,6 +97,14 @@ button {
     padding: 10px;
     border: 1px solid #ccc;
     min-width: 500px;
+}
+
+.select {
+    border-radius: 5px;
+    padding: 10px;
+    /* margin: 10px; */
+    border: 1px solid #ccc;
+    min-width: 50px;
 }
 
 .button {
@@ -108,20 +130,16 @@ button {
 
 .form-table {
     /* ブロック要素にたいして以下のようにすると、上下は0で中央寄せになる */
-    margin: 0 auto;
-}
-
-.form-table th {
-    padding: 10px;
-    /* 左寄せ */
-    text-align: left;
+    margin: 10px 0px 0px 350px;
 }
 
 .form-table td {
     padding: 10px;
+    text-align: center;
 }
 
 .form-button {
     margin: 20px;
     text-align: center;
+    padding: 0px 0px 0px 50px;
 }

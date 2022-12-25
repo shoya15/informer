@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :informs
   root 'welcome#index'
   get '/about', to: 'welcome#about'
   get '/contact', to: 'welcome#contact'
