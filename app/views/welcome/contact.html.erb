@@ -12,7 +12,8 @@
             </td>
         </tr>
     </table>
-    <div class="form-submit">
-        <button class="button" type="submit">送信</button>
-    </div>
 </form>
+<%# formタグの中に書くとエラーになる %>
+<div class="form-submit">
+    <%= button_to "送信", complete_path, {method: :get, class: "button"} %>
+</div>
