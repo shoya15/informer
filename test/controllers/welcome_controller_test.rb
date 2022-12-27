@@ -18,4 +18,9 @@ class WelcomeControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select 'title', 'Contact | Informer'
   end
+
+  test 'should get complete' do
+    get complete_path
+    assert_response :success
+  end
 end

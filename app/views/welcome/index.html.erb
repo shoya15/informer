@@ -1,7 +1,58 @@
 <% provide(:title, "Home") %>
-<h1>Informer</h1>
-<p>
-    This is the home page of the
-    <a href="http://localhost:3000/">Informer</a>
-    .
+<p class="script">
+    読み上げるテキストと時間を設定してください。
 </p>
+<body>
+    <form model: inform class="form" action="">
+        <table class="form-table">
+            <%# table raw: 行を作る %>
+            <tr> 
+                <%# tabla headline: 見出し %>
+                <th>
+                    <%# 見出しを押しても、項目にフォーカスできるようにする %>
+                    <label class="label" for="name">
+                        テキスト
+                    </label>
+                </th>
+                <%# table data: 項目 %>
+                <td>
+                    <input class="input" type="text" id="text" name="text" placeholder="読み上げたいテキストを入力してください" />
+                        <script>
+                            function readAloud() {
+                            // テキストを取得
+                            const text = document.getElementById("text").value
+
+                            // ブラウザにWeb Speech API Speech Synthesis機能があるか判定
+                            if ('speechSynthesis' in window) {
+                                // 発言を設定
+                                const uttr = new SpeechSynthesisUtterance()
+                                // 読み上げるテキストを設定
+                                uttr.text = text
+                                // 読み上げる速さを設定
+                                uttr.rate = 0.93
+                                // 声の高さを設定
+                                uttr.pitch = 1.1
+                                // 発言を再生
+                                window.speechSynthesis.speak(uttr)
+                            } else {
+                                alert('大変申し訳ございません。このブラウザは音声合成に対応しておりません。')
+                            }
+                            }
+                        </script>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <td>
+                        <input class="input_time" type="time" name="time" min="00:00" max="23:59">
+                    </td>
+                </tr>
+            </th>
+        </table>
+        <%# buttonタグ：何かしらのアクションを起こす %>
+        <%# submitもある %>
+        <div class="form-button">
+            <button class="button" type="button" onclick="readAloud()">設定</button>
+        </div>
+    </form>
+</body>
