@@ -1,5 +1,5 @@
 <% provide(:title, "Home") %>
-<p class="script">
+<p class="script_top">
     読み上げるテキストと時間を設定してください。
 </p>
 <body>
@@ -16,7 +16,7 @@
                 </th>
                 <%# table data: 項目 %>
                 <td>
-                    <input class="input" type="text" id="text" name="text" placeholder="読み上げたいテキストを入力してください" />
+                    <input id="text" class="input" type="text" id="text" name="text" placeholder="読み上げたいテキストを入力してください" />
                         <script>
                             function readAloud() {
                             // テキストを取得
@@ -44,7 +44,7 @@
             <tr>
                 <th>
                     <td>
-                        <input class="input_time" type="time" name="time" min="00:00" max="23:59">
+                        <input class="input_time" type="time" name="time" value="12:00" min="00:00" max="23:59">
                     </td>
                 </tr>
             </th>
@@ -52,7 +52,17 @@
         <%# buttonタグ：何かしらのアクションを起こす %>
         <%# submitもある %>
         <div class="form-button">
-            <button class="button" type="button" onclick="readAloud()">設定</button>
+            <button id="button" class="button" type="button" onclick="readAloud()">設定</button>
+            <script>
+                const button = document.getElementById("button");
+                // keyupイベント：キーが押された状態から離された時に発生するイベント
+                button.addEventListener("click", function(){
+                    const result = text.value;
+                    if(!result){
+                        alert("テキストを入力してください")
+                    }
+                })
+            </script>
         </div>
     </form>
 </body>
