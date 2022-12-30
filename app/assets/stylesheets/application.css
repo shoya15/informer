@@ -23,7 +23,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background-color: #000;
+    background-color: #fff;
 }
 
 .header-logo {
@@ -34,7 +34,7 @@ body {
     /* aタグを一応blockにしておく */
     display: block;
     padding-left: 10px;
-    color: dodgerblue;
+    color: blue;
     /* 下線がつかないようにする */
     text-decoration: none;
 }
@@ -47,7 +47,7 @@ body {
 .header-navlink {
     display: block;
     padding: 10px;
-    color: #fff;
+    color: #000;
     text-decoration: none;
     font-weight: bold;
     /* 透明な線を入れておく->アニメーションっぽくなる */
@@ -60,12 +60,35 @@ body {
     border-bottom: 2px solid #333;
 }
 
-.script {
+.script_top {
     margin: 150px 0px 0px 350px;
     padding-left: 120px;
     font-size: 22px;
 }
 
+.script_complete {
+    margin: 200px 0px 10px 0px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.center {
+    text-align: center;
+}
+
+.back_top {
+    margin: 0 auto;
+    /* padding-left: 550px; */
+    font-size: 20px;
+    text-decoration: none;
+    transition: color .25s;
+}
+
+.back_top:hover {
+    color: red;
+}
+
+back_top,
 label,
 input,
 textarea,
