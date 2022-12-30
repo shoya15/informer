@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag "sanitize.css" %> <!-- <link href="/assets/sanitize.css" rel="stylesheet" /> -->
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body> <!--ユーザーから見える-->
@@ -29,7 +29,6 @@
         </nav>
     </header>
     <%= yield %>
-
-    <%= javascript_importmap_tags %> <!-- 見た目に影響しないためheadタグでなくbodyタグの終わりに書く（headタグが読み込み終わるまで画面は真っ白） -->
+    <%= javascript_importmap_tags "application" %> <!-- 見た目に影響しないためheadタグでなくbodyタグの終わりに書く（headタグが読み込み終わるまで画面は真っ白） -->
   </body>
 </html>

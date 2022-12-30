@@ -1,8 +1,8 @@
 <% provide(:title, "Home") %>
-<p class="script_top">
-    読み上げるテキストと時間を設定してください。
-</p>
 <body>
+    <p class="script_top" id="t">
+        読み上げるテキストと時間を設定してください。
+    </p>
     <form model: inform class="form" action="">
         <table class="form-table">
             <%# table raw: 行を作る %>
@@ -16,35 +16,13 @@
                 </th>
                 <%# table data: 項目 %>
                 <td>
-                    <input id="text" class="input" type="text" id="text" name="text" placeholder="読み上げたいテキストを入力してください" />
-                        <script>
-                            function readAloud() {
-                            // テキストを取得
-                            const text = document.getElementById("text").value
-
-                            // ブラウザにWeb Speech API Speech Synthesis機能があるか判定
-                            if ('speechSynthesis' in window) {
-                                // 発言を設定
-                                const uttr = new SpeechSynthesisUtterance()
-                                // 読み上げるテキストを設定
-                                uttr.text = text
-                                // 読み上げる速さを設定
-                                uttr.rate = 0.93
-                                // 声の高さを設定
-                                uttr.pitch = 1.1
-                                // 発言を再生
-                                window.speechSynthesis.speak(uttr)
-                            } else {
-                                alert('大変申し訳ございません。このブラウザは音声合成に対応しておりません。')
-                            }
-                            }
-                        </script>
+                    <input id="js-text" class="input" type="text" name="text" value="時間です" placeholder="読み上げるテキストを入力してください" />
                 </td>
             </tr>
             <tr>
                 <th>
                     <td>
-                        <input class="input_time" type="time" name="time" value="12:00" min="00:00" max="23:59">
+                        <input id="time" class="input_time" type="time" name="time" value="12:00" min="00:00" max="23:59">
                     </td>
                 </tr>
             </th>
@@ -52,17 +30,7 @@
         <%# buttonタグ：何かしらのアクションを起こす %>
         <%# submitもある %>
         <div class="form-button">
-            <button id="button" class="button" type="button" onclick="readAloud()">設定</button>
-            <script>
-                const button = document.getElementById("button");
-                // keyupイベント：キーが押された状態から離された時に発生するイベント
-                button.addEventListener("click", function(){
-                    const result = text.value;
-                    if(!result){
-                        alert("テキストを入力してください")
-                    }
-                })
-            </script>
+            <button id="js-button" class="button" type="button">設定</button>
         </div>
     </form>
 </body>

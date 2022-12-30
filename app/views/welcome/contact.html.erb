@@ -1,29 +1,21 @@
 <% provide(:title, "Contact") %>
 <h1>Contact</h1>
-<p>
-    改善して欲しい点や要望をご記入ください。
-</p>
-<form class="form" action="">
-    <table class="form-table">
-        <tr> 
-            <td>
-                <%# 大きいテキストボックス(cols:文字数, rows:行) %>
-                <textarea class="textarea" cols="20" rows="15"></textarea>
-            </td>
-        </tr>
-    </table>
-</form>
-<%# formタグの中に書くとエラーになる %>
-<div class="form-submit">
-    <%= button_to "送信", complete_path, {method: :get, id: "button", class: "button"} %>
-    <%# ダイアログを表示 %>
-    <script>
-        const button = document.getElementById("button");
-        button.addEventListener("click", function(){
-            const result = window.confirm("送信しますか？");
-            if(!result){
-                window.location.href="/contact"
-            }
-        })
-    </script>
-</div>
+<body>
+    <p>
+        改善して欲しい点や要望をご記入ください。
+    </p>
+    <form class="form" action="">
+        <table class="form-table">
+            <tr> 
+                <td>
+                    <%# 大きいテキストボックス(cols:文字数, rows:行) %>
+                    <textarea class="textarea" cols="20" rows="15"></textarea>
+                </td>
+            </tr>
+        </table>
+        <div class="form-submit">
+            <%# onclick="return false"で画面遷移できるようにしている %>
+            <button id="js-submit" class="button" type="submit" onclick="return false">送信</button>
+        </div>
+    </form>
+</body>
