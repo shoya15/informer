@@ -1,36 +1,3 @@
-<% provide(:title, "Home") %>
-<body>
-    <p class="script_top" id="t">
-        読み上げるテキストと時間を設定してください。
-    </p>
-    <form model: inform class="form" action="">
-        <table class="form-table">
-            <%# table raw: 行を作る %>
-            <tr> 
-                <%# tabla headline: 見出し %>
-                <th>
-                    <%# 見出しを押しても、項目にフォーカスできるようにする %>
-                    <label class="label" for="name">
-                        テキスト
-                    </label>
-                </th>
-                <%# table data: 項目 %>
-                <td>
-                    <input id="js-text" class="input" type="text" name="text" value="時間です" placeholder="読み上げるテキストを入力してください" />
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    <td>
-                        <input id="time" class="input_time" type="time" name="time" value="12:00" min="00:00" max="23:59">
-                    </td>
-                </tr>
-            </th>
-        </table>
-        <%# buttonタグ：何かしらのアクションを起こす %>
-        <%# submitもある %>
-        <div class="form-button">
-            <button id="js-button" class="button" type="button">設定</button>
-        </div>
-    </form>
-</body>
+<% @posts.each do |post| %>
+    <p><%= post.content %></p>
+<% end %>

@@ -118,7 +118,7 @@ button {
 .textarea {
     border-radius: 5px;
     padding: 10px;
-    margin-left: 60px;
+    margin-left: 100px;
     border: 1px solid #ccc;
     min-width: 500px;
 }
@@ -156,8 +156,11 @@ button {
 }
 
 .form-table {
-    /* ブロック要素にたいして以下のようにすると、上下は0で中央寄せになる */
-    margin: 10px 0px 0px 350px;
+    margin: 10px 0px 0px 325px;
+}
+
+.form-table th {
+    text-align: right;
 }
 
 .form-table td {
@@ -168,7 +171,6 @@ button {
 .form-button {
     margin: 10px;
     text-align: center;
-    padding-left: 50px;
 }
 
 .form-submit {

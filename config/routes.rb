@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :informs
-  root 'welcome#index'
+  resources :posts
+  root 'posts#new'
+  get '/index', to: 'welcome#index'
   get '/about', to: 'welcome#about'
   get '/contact', to: 'welcome#contact'
   get '/complete', to: 'welcome#complete'
