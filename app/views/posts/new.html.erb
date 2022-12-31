@@ -1,0 +1,36 @@
+<% provide(:title, "Home") %>
+<body>
+    <p class="script_top">
+        読み上げるテキストと時間を設定してください。
+    </p>
+    <%= form_with model: @post, local: true, class: "form" do |f| %>
+        <table class="form-table">
+            <%# table raw: 行を作る %>
+            <tr> 
+                <%# tabla headline: 見出し %>
+                <th>
+                    <%# 見出しを押しても、項目にフォーカスできるようにする %>
+                    <label class="label" for="name">
+                        テキスト
+                    </label>
+                </th>
+                <%# table data: 項目 %>
+                <td>
+                    <%= f.text_field :content, id:"js-text", class:"input", value:"時間です", placeholder:"読み上げるテキストを入力してください" %>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                <td>
+                    <%= f.time_field :end_time, id:"time", class:"input_time", value:"12:00" %>
+                </td>
+                </th>
+            </tr>
+        </table>
+
+        <div class="form-button">
+            <%= f.submit "設定", id:"js-button", class: "button" %>
+        </div>
+    <% end %>
+</body>
+

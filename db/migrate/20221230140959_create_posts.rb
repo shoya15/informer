@@ -1,6 +1,6 @@
-class CreateInforms < ActiveRecord::Migration[7.0]
+class CreatePosts < ActiveRecord::Migration[7.0]
   def change
-    create_table :informs do |t|
+    create_table :posts do |t|
       t.text :content, null: false
       t.datetime :end_time, null: false
 
