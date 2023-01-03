@@ -60,9 +60,15 @@ body {
     border-bottom: 2px solid #333;
 }
 
-.script_top {
-    margin: 150px 0px 0px 350px;
-    padding-left: 120px;
+.script_top1 {
+    margin: 150px 0px 0px 0px;
+    font-size: 22px;
+    text-align: center;
+}
+
+.script_top2 {
+    padding: auto;
+    text-align: center;
     font-size: 22px;
 }
 
@@ -135,11 +141,7 @@ button {
 }
 
 .button {
-    display: inline-block;
-    /* 
-    インライン要素でありながらブロック要素のような振る舞いもすることができる
-    横並びにしたり、上下左右にpadding, marginを持つことができる
-    */
+    margin: auto;
     color: #000;
     font-weight: bold;
     background-color: transparent;

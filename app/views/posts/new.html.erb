@@ -1,7 +1,10 @@
 <% provide(:title, "Home") %>
 <body>
-    <p class="script_top">
-        読み上げるテキストと時間を設定してください。
+    <p id="js-p1" class="script_top1" style="display: block;">
+        読み上げるテキストと時間を設定してください
+    </p>
+    <p id="js-p2" class="script_top1" style="display: none;">
+        設定しました
     </p>
     <%= form_with model: @post, local: true, class: "form" do |f| %>
         <table class="form-table">
@@ -10,7 +13,7 @@
                 <%# tabla headline: 見出し %>
                 <th>
                     <%# 見出しを押しても、項目にフォーカスできるようにする %>
-                    <label class="label" for="name">
+                    <label id="js-label1" class="label" for="name" style="display: block;">
                         テキスト
                     </label>
                 </th>
@@ -18,19 +21,31 @@
                 <td>
                     <%= f.text_field :content, id:"js-text", class:"input", value:"時間です", placeholder:"読み上げるテキストを入力してください" %>
                 </td>
+                <p id="js-p3" class="script_top2" style="display: none;">
+                    設定したテキスト
+                </p>
             </tr>
             <tr>
                 <th>
-                <td>
-                    <%= f.time_field :end_time, id:"time", class:"input_time", value:"12:00" %>
-                </td>
+                    <label id="js-label2" class="label" for="name" style="display: block;">
+                        時間
+                    </label>
                 </th>
+                <td>
+                    <%= f.time_field :end_time, id:"js-time", class:"input_time" %>
+                </td>
+                <p id="js-p4" class="script_top2" style="display: none;">
+                    設定した時間
+                </p>
             </tr>
         </table>
 
         <div class="form-button">
-            <%= f.submit "設定", id:"js-button", class: "button" %>
+            <%= f.button "設定", id:"js-button", class: "button", style: "display: block;" %>
         </div>
     <% end %>
+    <div class="form-button">
+        <%= button_to "削除", root_path, method: :get, id:"js-reset", class: "button", style: "display: none;" %>
+    </div>
 </body>
 

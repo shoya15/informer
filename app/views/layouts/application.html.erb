@@ -28,6 +28,8 @@
             </ul>
         </nav>
     </header>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
     <%= javascript_importmap_tags "application" %> <!-- 見た目に影響しないためheadタグでなくbodyタグの終わりに書く（headタグが読み込み終わるまで画面は真っ白） -->
   </body>
