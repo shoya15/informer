@@ -13,9 +13,8 @@
                 </td>
             </tr>
         </table>
-        <div class="form-submit">
-            <%# onclick="return false"で画面遷移できるようにしている %>
-            <button id="js-submit" class="button" type="submit" onclick="return false">送信</button>
-        </div>
     </form>
+    <div class="form-submit">
+        <%= button_to "送信", complete_path, method: :get, id: "js-submit", class:"button" %>
+    </div>
 </body>

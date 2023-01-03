@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  resources :posts
-  root 'posts#new'
-  get '/index', to: 'welcome#index'
+  resource :posts, only: %i[new create destroy]
+  root to: 'posts#destroy'
   get '/about', to: 'welcome#about'
   get '/contact', to: 'welcome#contact'
   get '/complete', to: 'welcome#complete'
