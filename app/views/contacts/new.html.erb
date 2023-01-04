@@ -1,0 +1,17 @@
+<% provide(:title, "Contact") %>
+<h1>Contact</h1>
+<body>
+    <%= form_with model: @contact, local: true, class: "form" do |f| %>
+        <table class="form-table">
+            <tr> 
+                <td>
+                    <%# 大きいテキストボックス(cols:文字数, rows:行) %>
+                    <%= f.text_area :message, class: "textarea", cols:"20", rows:"15" %>
+                </td>
+            </tr>
+        </table>
+        <div class="form-submit">
+            <%= f.submit "送信", id: "js-submit", class:"button" %>
+        </div>
+    <% end %>
+</body>
