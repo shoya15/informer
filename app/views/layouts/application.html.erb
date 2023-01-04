@@ -24,11 +24,10 @@
         <nav class="header-nav">
             <ul class="header-navlist">
                 <li class="header-navitem"><%= link_to "ABOUT", about_path, class: "header-navlink" %></li>
-                <li class="header-navitem"><%= link_to "CONTACT", contact_path, class: "header-navlink" %></li>
+                <li class="header-navitem"><%= link_to "CONTACT", new_contacts_path, class: "header-navlink" %></li>
             </ul>
         </nav>
     </header>
-    <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
     <%= javascript_importmap_tags "application" %> <!-- 見た目に影響しないためheadタグでなくbodyタグの終わりに書く（headタグが読み込み終わるまで画面は真っ白） -->
