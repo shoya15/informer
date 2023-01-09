@@ -27,7 +27,8 @@ body {
 }
 
 .header-logo {
-    margin: 0;
+    padding: 10px;
+    min-width: 100px;
 }
 
 .header-link {
