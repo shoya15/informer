@@ -4,8 +4,4 @@ Rails.application.routes.draw do
   root to: 'posts#destroy'
   get '/about', to: 'welcome#about'
   get '/complete', to: 'welcome#complete'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
 end
