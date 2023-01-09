@@ -1,10 +1,10 @@
-<!DOCTYPE html> <!--ファイルがhtml文書であることを示す目印-->
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="uft-8"> <!--文字コードの指定-->
-    <meta name="viewport" content="width=device-width,initial-scale=1"> <!--それぞれのデバイスの大きさに合わせて表示-->
+    <meta charset="uft-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title><%= full_title(yield(:title)) %></title>
-    <meta name="description" content="sample text" >  <!--検索した後に表示されている文章（初期設定ではないから追加する）-->
+    <meta name="description" content="設定した時間に入力されたテキストを音声でお知らせするサービスです。" >
     
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,9 +12,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-    <%= stylesheet_link_tag "sanitize.css" %> <!-- <link href="/assets/sanitize.css" rel="stylesheet" /> -->
+    <%= stylesheet_link_tag "sanitize.css" %>
     <%= stylesheet_link_tag "application", 'data-turbolinks-track': 'reload' %>
 
+    <%# favicon %>
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
@@ -24,7 +25,7 @@
     <meta name="theme-color" content="#ffffff">
   </head>
 
-  <body> <!--ユーザーから見える-->
+  <body>
     <header class="header">
         <div class="header-logo">
             <%= link_to image_tag("logo.png") ,root_path %>
@@ -38,6 +39,6 @@
     </header>
     <p class="alert"><%= alert %></p>
     <%= yield %>
-    <%= javascript_importmap_tags "application" %> <!-- 見た目に影響しないためheadタグでなくbodyタグの終わりに書く（headタグが読み込み終わるまで画面は真っ白） -->
+    <%= javascript_importmap_tags "application" %>
   </body>
 </html>

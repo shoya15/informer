@@ -1,8 +1,6 @@
 @charset "utf-8";
 
-/* 全体に適用させるためにbodyに書く */
 body {
-    /* 代替え案 */
     font-family: 'Noto Sans JP', "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
     background-color: #fff;
     padding: 50px;
@@ -10,15 +8,11 @@ body {
 
 .header {
     width: auto;
-    /* 横一列にする */
     display: flex;
-    /* menuは右にロゴは左に */
     justify-content: space-between;
     align-items: center;
     padding: 0 15px;
-    /* 位置固定 */
     position: fixed;
-    /* 最前面に */
     z-index: 10;
     top: 0;
     left: 0;
@@ -26,22 +20,14 @@ body {
     background-color: #fff;
 }
 
-@media screen and (max-width: 768px) {
-    .header{
-        font-size: 12px;
-    }
- }
-
 .header-logo {
     padding: 10px;
 }
 
 .header-link {
-    /* aタグを一応blockにしておく */
     display: block;
     padding-left: 10px;
     color: blue;
-    /* 下線がつかないようにする */
     text-decoration: none;
 }
 
@@ -56,32 +42,30 @@ body {
     color: #000;
     text-decoration: none;
     font-weight: bold;
-    /* 透明な線を入れておく->アニメーションっぽくなる */
     border-bottom: 2px solid transparent;
     transition: border-color .25s;
 }
 
 .header-navlink:hover {
-    /* solid: 一本線 */
     border-bottom: 2px solid #333;
 }
 
-.script_top1 {
+.script_home1 {
     margin: 150px 0px 0px 0px;
     font-size: 22px;
     text-align: center;
 }
 
-.script_top2 {
+.script_home2 {
     padding: auto;
     text-align: center;
     font-size: 22px;
 }
 
 @media screen and (max-width: 768px) {
-    .script_top2{
-            margin: auto;
-            font-size: 12px;
+    .script_home2{
+        margin: auto;
+        font-size: 12px;
     }
  }
 
@@ -99,41 +83,34 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-    .script_top1, .headline, .script_complete{
+    .script_home1, .headline, .script_complete{
             margin-top: 40px;
             font-size: 12px;
     }
  }
 
-.center {
+.back_home_center {
     text-align: center;
 }
 
-.back_top {
+.back_home {
     margin: 0 auto;
-    /* padding-left: 550px; */
     font-size: 20px;
     text-decoration: none;
     transition: color .25s;
 }
 
 @media screen and (max-width: 768px) {
-    .back_top{
+    .header, .back_home, .script_contact{
         font-size: 12px;
     }
  }
 
-.back_top:hover {
+.back_home:hover {
     color: red;
 }
 
-back_top,
-label,
-input,
-textarea,
-select,
-button {
-    /* カーソルが指マークになる */
+.back_home, .label, .input, .textarea, .select, .button {
     cursor: pointer;
 }
 
@@ -143,11 +120,9 @@ button {
 }
 
 .input {
-    /* 丸角にする */
     border-radius: 5px;
     margin: 0 15px;
     padding: 10px;
-    /* 枠線の設定 */
     border: 1px solid #ccc;
     min-width: 500px;
     min-height: 50px;
@@ -179,7 +154,7 @@ button {
 .textarea {
     border-radius: 5px;
     padding: 10px;
-    margin-left: 100px;
+    margin-left: 90px;
     border: 1px solid #ccc;
     min-width: 500px;
 }
@@ -189,6 +164,7 @@ button {
         margin: auto;
         min-width: 300px;
         max-height: 150px;
+        font-size: 10px;
     }
  }
 
@@ -244,4 +220,8 @@ button {
 .form-submit {
     margin: 20px;
     text-align: center;
+}
+
+#js-script_hidden1, #js-script_hidden2, #js-script_hidden3, #js-reset{
+    display: none;
 }

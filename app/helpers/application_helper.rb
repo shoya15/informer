@@ -2,7 +2,7 @@ module ApplicationHelper
   def full_title(page_title = "")
     base_title = "Informer"
     if page_title.empty?
-      base_title # return不要（暗黙の戻り値）
+      base_title
     else
       page_title + " | " + base_title
     end

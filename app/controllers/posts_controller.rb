@@ -19,11 +19,9 @@ class PostsController < ApplicationController
     end
   end
 
-  # ここでしか呼べない
   private
 
   def post_params
-    # postでの取得を許可する値を定義(セキュリティ面から)
     params.require(:post).permit(
       :content, :end_time
     )
