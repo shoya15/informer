@@ -3,7 +3,7 @@ lock "~> 3.17.2"
 
 set :application, "informer"
 set :repo_url, "git@github.com:shoya15/informer.git"
-set :linked_files, fetch(:linked_files, []).push("config/master.key")
+set :linked_files, %w(config/master.key)
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
