@@ -21,10 +21,8 @@ test:
   database: db/test.sqlite3
 
 production:
-  <% if Rails.application.credentials.database.present? %>
     <<: *default
-    database: <%= Rails.application.credentials.db[:database] %>
-    username: <%= Rails.application.credentials.db[:username] %>
-    password: <%= Rails.application.credentials.db[:password] %>
+    # database: <%= Rails.application.credentials.db[:database] %>
+    # username: <%= Rails.application.credentials.db[:username] %>
+    # password: <%= Rails.application.credentials.db[:password] %>
     socket: <%= Rails.application.credentials.db[:socket] %>
-  <% end %>
