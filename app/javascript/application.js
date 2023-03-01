@@ -3,4 +3,4 @@
 // import "@hotwired/turbo-rails"
 import "controllers"
 
-import "./index";
+import "./index.js";
