@@ -49,7 +49,6 @@ window.addEventListener("load", function () {
             }
             let current_time = hour + ":" + minute
 
-            // 音声合成
             if ('speechSynthesis' in window) {
                 const uttr = new SpeechSynthesisUtterance()
                 uttr.text = text

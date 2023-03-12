@@ -2,4 +2,4 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
-import "./index-bf7e311c9567db605502f2ea46e91a20b9616e6abf9fb2146bb09abcbe12ac9a.js"
+import "./index-9446d18a50bcfb512a368cb9f0e69423c0393fc45e889b41be1cd63a0ac62b46.js"
